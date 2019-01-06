@@ -31,8 +31,6 @@ class DiscussionPolicy extends AbstractPolicy
      */
     public function vote(User $actor, Discussion $discussion)
     {
-        if ($discussion->is_locked && $actor->cannot('lock', $discussion)) {
-            return false;
-        }
+        return true;
     }
 }
